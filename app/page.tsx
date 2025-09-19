@@ -1,103 +1,254 @@
-import Image from "next/image";
+import { Star } from "lucide-react";
+
+function StarRating() {
+  return (
+    <div className="flex text-yellow-500 mb-2">
+      {Array(5)
+        .fill(0)
+        .map((_, i) => (
+          <Star
+            key={i}
+            className="w-5 h-5 fill-yellow-500 stroke-yellow-500"
+          />
+        ))}
+    </div>
+  );
+}
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
+    <main className="min-h-screen bg-gradient-to-br from-white via-slate-50 to-white flex flex-col items-center px-6">
+      {/* Hero-Bereich */}
+      <section className="w-full max-w-4xl text-center py-24">
+        <h1 className="text-5xl sm:text-6xl font-extrabold tracking-tight mb-6">
+          Erstelle UGC-Ads mit KI – in Minuten 🚀
+        </h1>
+        <p className="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">
+          Gib dein Produkt ein und erhalte sofort Skript, Storyboard, Voiceover-Text
+          und Captions. Perfekt für TikTok, Instagram Reels und YouTube Shorts.
+        </p>
+        <div className="mt-8 flex justify-center gap-4">
           <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/studio"
+            className="px-6 py-3 rounded-full bg-primary text-white font-medium hover:brightness-95"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
+            Jetzt ausprobieren
           </a>
           <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#features"
+            className="px-6 py-3 rounded-full bg-accent text-white font-medium hover:brightness-95"
           >
-            Read our docs
+            Mehr erfahren
           </a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+      </section>
+
+      {/* Features */}
+      <section
+        id="features"
+        className="w-full max-w-5xl grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-24"
+      >
+        {/* Card 1 */}
+        <div className="p-6 bg-white border rounded-2xl shadow-sm text-center hover:shadow-md hover:-translate-y-1 transition">
+          <div className="w-12 h-12 mx-auto rounded-full bg-primary/10 flex items-center justify-center text-primary text-xl">
+            🎬
+          </div>
+          <h3 className="font-semibold mt-4 text-lg">Storyboard automatisch</h3>
+          <p className="text-slate-600 text-sm mt-2">
+            Visuelle Szenenideen sofort generiert.
+          </p>
+        </div>
+
+        {/* Card 2 */}
+        <div className="p-6 bg-white border rounded-2xl shadow-sm text-center hover:shadow-md hover:-translate-y-1 transition">
+          <div className="w-12 h-12 mx-auto rounded-full bg-accent/10 flex items-center justify-center text-accent text-xl">
+            🗣️
+          </div>
+          <h3 className="font-semibold mt-4 text-lg">Voiceover-Text</h3>
+          <p className="text-slate-600 text-sm mt-2">
+            Fertige Skripte für KI-TTS und Sprecher.
+          </p>
+        </div>
+
+        {/* Card 3 */}
+        <div className="p-6 bg-white border rounded-2xl shadow-sm text-center hover:shadow-md hover:-translate-y-1 transition">
+          <div className="w-12 h-12 mx-auto rounded-full bg-primary/10 flex items-center justify-center text-primary text-xl">
+            ✍️
+          </div>
+          <h3 className="font-semibold mt-4 text-lg">Captions + Hashtags</h3>
+          <p className="text-slate-600 text-sm mt-2">
+            Optimiert für Reichweite & Engagement.
+          </p>
+        </div>
+
+        {/* Card 4 */}
+        <div className="p-6 bg-white border rounded-2xl shadow-sm text-center hover:shadow-md hover:-translate-y-1 transition">
+          <div className="w-12 h-12 mx-auto rounded-full bg-accent/10 flex items-center justify-center text-accent text-xl">
+            💳
+          </div>
+          <h3 className="font-semibold mt-4 text-lg">Stripe Credits</h3>
+          <p className="text-slate-600 text-sm mt-2">
+            Monetarisierung mit Pay-per-Use.
+          </p>
+        </div>
+      </section>
+
+      {/* ✅ Testimonials */}
+      <section id="testimonials" className="w-full max-w-5xl text-center mb-24">
+        <h2 className="text-3xl font-bold mb-12">Was unsere Nutzer sagen</h2>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Testimonial 1 */}
+          <div className="p-6 bg-white border rounded-2xl shadow-sm hover:shadow-md transition text-left">
+            <StarRating />
+            <p className="text-slate-600 mb-4">
+              „In 5 Minuten ein komplettes TikTok-Skript erstellt – genial! Hat mir
+              viel Zeit gespart.“
+            </p>
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-slate-200"></div>
+              <div>
+                <p className="font-semibold">Lisa M.</p>
+                <p className="text-slate-500 text-sm">Content Creator</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Testimonial 2 */}
+          <div className="p-6 bg-white border rounded-2xl shadow-sm hover:shadow-md transition text-left">
+            <StarRating />
+            <p className="text-slate-600 mb-4">
+              „Perfekt für schnelle UGC-Videos. Ich kann sofort Captions und Hashtags
+              übernehmen.“
+            </p>
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-slate-200"></div>
+              <div>
+                <p className="font-semibold">Tom K.</p>
+                <p className="text-slate-500 text-sm">Freelancer</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Testimonial 3 */}
+          <div className="p-6 bg-white border rounded-2xl shadow-sm hover:shadow-md transition text-left">
+            <StarRating />
+            <p className="text-slate-600 mb-4">
+              „Wir nutzen es im Team für Instagram Ads – spart uns locker mehrere
+              Stunden pro Woche.“
+            </p>
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-slate-200"></div>
+              <div>
+                <p className="font-semibold">Sophie R.</p>
+                <p className="text-slate-500 text-sm">Marketing Managerin</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ✅ Preise */}
+      <section id="preise" className="w-full max-w-5xl text-center mb-24">
+        <h2 className="text-3xl font-bold mb-8">Preise</h2>
+        <div className="grid sm:grid-cols-2 gap-6">
+          {/* Starter */}
+          <div className="p-8 bg-white border rounded-2xl shadow-sm hover:shadow-md transition">
+            <h3 className="text-xl font-semibold mb-4">Starter</h3>
+            <p className="text-4xl font-bold mb-4">0€</p>
+            <p className="text-slate-600 mb-6">Ideal zum Testen</p>
+            <ul className="text-slate-600 text-sm mb-6 space-y-2">
+              <li>✅ 5 kostenlose Storyboards</li>
+              <li>✅ Basis-Funktionen</li>
+            </ul>
+            <a
+              href="/studio"
+              className="block w-full px-4 py-2 bg-primary text-white rounded-lg hover:brightness-95"
+            >
+              Kostenlos starten
+            </a>
+          </div>
+
+          {/* Pro */}
+          <div className="p-8 bg-white border rounded-2xl shadow-sm hover:shadow-md transition">
+            <h3 className="text-xl font-semibold mb-4">Pro</h3>
+            <p className="text-4xl font-bold mb-4">29€/Monat</p>
+            <p className="text-slate-600 mb-6">Für Creator & Teams</p>
+            <ul className="text-slate-600 text-sm mb-6 space-y-2">
+              <li>✅ Unbegrenzte Storyboards</li>
+              <li>✅ Voiceover-Export</li>
+              <li>✅ Priorisierter Support</li>
+            </ul>
+            <a
+              href="/studio"
+              className="block w-full px-4 py-2 bg-accent text-white rounded-lg hover:brightness-95"
+            >
+              Upgrade wählen
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ✅ Kontakt */}
+      <section id="kontakt" className="w-full max-w-3xl text-center mb-24">
+        <h2 className="text-3xl font-bold mb-6">Kontakt</h2>
+        <p className="text-slate-600 mb-6">
+          Hast du Fragen? Schreib uns einfach eine Nachricht:
+        </p>
+
+        <form className="grid gap-4 text-left">
+          <input
+            type="text"
+            placeholder="Dein Name"
+            className="px-4 py-2 border rounded-lg"
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
+          <input
+            type="email"
+            placeholder="Deine E-Mail"
+            className="px-4 py-2 border rounded-lg"
           />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+          <textarea
+            placeholder="Deine Nachricht"
+            rows={4}
+            className="px-4 py-2 border rounded-lg"
+          ></textarea>
+          <button
+            type="submit"
+            className="px-6 py-3 bg-primary text-white rounded-lg hover:brightness-95"
+          >
+            Nachricht senden
+          </button>
+        </form>
+      </section>
+
+      {/* ✅ Call-to-Action */}
+      <section className="w-full max-w-4xl text-center bg-gradient-to-r from-primary to-accent text-white rounded-3xl shadow-lg py-16 px-6 mb-24">
+        <h2 className="text-3xl sm:text-4xl font-extrabold mb-6">
+          Starte jetzt kostenlos 🚀
+        </h2>
+        <p className="text-lg mb-8 opacity-90">
+          Teste den UGC Creator ohne Risiko und erhalte deine ersten Storyboards in wenigen Minuten.
+        </p>
+        <div className="flex justify-center gap-4">
+          <a
+            href="/studio"
+            className="px-8 py-4 bg-white text-black font-semibold rounded-full hover:brightness-90 transition"
+          >
+            Kostenlos starten
+          </a>
+          <a
+            href="#preise"
+            className="px-8 py-4 border border-white text-white font-semibold rounded-full hover:bg-white hover:text-black transition"
+          >
+            Preise ansehen
+          </a>
+        </div>
+      </section>
+
+      {/* ✅ Footer */}
+      <footer className="w-full max-w-5xl text-center border-t py-6 text-slate-500 text-sm">
+        © {new Date().getFullYear()} UGC Creator – Alle Rechte vorbehalten.
       </footer>
-    </div>
+    </main>
   );
 }
