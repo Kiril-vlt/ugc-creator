@@ -9,19 +9,12 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: {
-          DEFAULT: "#2563eb", // schönes Blau
-          light: "#3b82f6",
-          dark: "#1e40af",
-        },
-        accent: {
-          DEFAULT: "#ec4899", // modernes Pink
-          light: "#f472b6",
-          dark: "#be185d",
-        },
+        primary: "#9333ea", // Lila
+        accent: "#ec4899",  // Pink
       },
     },
   },
   plugins: [],
 };
+
 export default config;
